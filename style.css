@@ -1,198 +1,299 @@
-/* 全局重置與手機樣式 */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #f4f6f8;
-  color: #2c3e50;
-  padding-bottom: 80px; /* 預留底部選單空間 */
+  background-color: #f6f7f9;
+  color: #333;
+  padding-bottom: 80px;
 }
 
-.content {
+.app-container {
   max-width: 480px;
   margin: 0 auto;
   padding: 16px;
 }
 
-/* 分頁切換控制 */
+/* 分頁切換 */
 .tab-content {
   display: none;
 }
-
 .tab-content.active {
   display: block;
 }
 
-/* 卡片設計 */
-.card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.hero-card {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+/* 頂部 Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #ff5e62, #ff9966);
   color: white;
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 24px 20px;
+  box-shadow: 0 8px 20px rgba(255, 94, 98, 0.25);
   margin-bottom: 16px;
-  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.25);
 }
 
-.badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 12px;
+.hero-tag {
+  font-size: 11px;
   font-weight: bold;
   letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
   margin-bottom: 8px;
 }
 
-.hero-card h1 {
+.hero-banner h1 {
   font-size: 22px;
-  margin-bottom: 6px;
+  line-height: 1.3;
+  margin-bottom: 8px;
 }
 
-.hero-card .date {
+.hero-date {
   font-size: 13px;
   opacity: 0.9;
 }
 
-/* 兩欄網格 */
-.card-grid {
+/* 數據概覽 */
+.stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
-.info-card {
+.stat-card {
   background: white;
-  padding: 12px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  border-radius: 14px;
+  padding: 12px 8px;
+  text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.info-card .icon {
-  font-size: 20px;
-  color: #e74c3c;
+.stat-card i {
+  color: #ff5e62;
+  font-size: 16px;
+  margin-bottom: 4px;
 }
 
-.info-card strong {
-  display: block;
-  font-size: 12px;
-  color: #7f8c8d;
-}
-
-.info-card p {
-  font-size: 12px;
-  font-weight: bold;
-}
-
-/* 行程與清單列表 */
-.schedule-list, .check-list {
-  list-style: none;
-  margin-top: 10px;
-}
-
-.schedule-list li, .check-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #edf2f7;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.schedule-list li span {
-  display: inline-block;
-  background: #ffeae6;
-  color: #e74c3c;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-right: 6px;
-}
-
-/* 按鈕樣式 */
-.btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  background-color: #e74c3c;
-  color: white;
-  padding: 12px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: #2c3e50;
-  border: 1px solid #cbd5e0;
-}
-
-/* 語言卡片 */
-.subtitle {
+.stat-val {
   font-size: 13px;
-  color: #7f8c8d;
-  margin-bottom: 12px;
+  font-weight: bold;
 }
 
-.lang-card {
+.stat-lbl {
+  font-size: 10px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* 提醒 Box */
+.alert-box {
+  background: #fff6e6;
+  border-left: 4px solid #ffa000;
+  border-radius: 12px;
+  padding: 12px 14px;
   display: flex;
-  justify-content: space-between;
+  gap: 12px;
   align-items: center;
-  cursor: pointer;
-  transition: transform 0.1s ease;
+  margin-bottom: 16px;
+  font-size: 12px;
 }
 
-.lang-card:active {
+.alert-box i {
+  color: #ffa000;
+  font-size: 18px;
+}
+
+.alert-box strong {
+  display: block;
+  color: #d32f2f;
+}
+
+/* 通用區塊卡片 */
+.section-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title i {
+  color: #ff5e62;
+}
+
+/* 時間軸列表 */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  background: #fdfdfd;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.timeline-item:active {
   transform: scale(0.98);
 }
 
-.jp-text {
-  font-size: 18px;
+.day-badge {
+  background: #ff5e62;
+  color: white;
+  font-size: 11px;
   font-weight: bold;
-  color: #e74c3c;
-  margin: 2px 0;
+  padding: 6px 8px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 55px;
 }
 
-.romaji {
+.day-desc strong {
+  display: block;
+  font-size: 13px;
+}
+
+.day-desc span {
+  font-size: 11px;
+  color: #777;
+}
+
+/* 列表樣式 */
+.info-list {
+  list-style: none;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.info-list li {
+  padding: 6px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+/* 標頭 */
+.section-header {
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.section-header p {
   font-size: 12px;
-  color: #95a5a6;
+  color: #777;
 }
 
-.copy-icon {
-  color: #bdc3c7;
-  font-size: 18px;
+/* 語言字卡 */
+.thai-card {
+  background: white;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  cursor: pointer;
 }
 
-/* 底部固定導覽列 */
+.cn { font-size: 12px; color: #888; }
+.jp { font-size: 18px; font-weight: bold; color: #ff5e62; margin: 2px 0; }
+.pinyin { font-size: 11px; color: #aaa; }
+
+.copy-btn {
+  background: #fff0f0;
+  color: #ff5e62;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* 記帳分帳樣式 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.btn-primary {
+  background: #ff5e62;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.settlement-box {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #444;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+.empty-text {
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
+  padding: 10px;
+}
+
+/* 底部導覽列 */
 .bottom-nav {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   height: 60px;
-  background: #ffffff;
+  background: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #eee;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.03);
   z-index: 1000;
 }
@@ -203,34 +304,70 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #95a5a6;
+  color: #999;
   font-size: 11px;
-  width: 33.33%;
+  width: 25%;
   cursor: pointer;
 }
 
 .nav-item i {
   font-size: 18px;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .nav-item.active {
-  color: #e74c3c;
+  color: #ff5e62;
+  font-weight: bold;
 }
 
-/* Toast 提示浮窗 */
+/* 彈窗 Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px; right: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.modal-location {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #ff5e62;
+  font-weight: bold;
+}
+
+/* Toast */
 .toast {
   position: fixed;
-  top: 20px;
-  left: 50%;
+  top: 20px; left: 50%;
   transform: translateX(-50%) translateY(-100px);
   background: rgba(0,0,0,0.8);
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
-  font-size: 13px;
-  transition: transform 0.3s ease;
-  z-index: 2000;
+  font-size: 12px;
+  transition: transform 0.3s;
+  z-index: 3000;
 }
 
 .toast.show {
