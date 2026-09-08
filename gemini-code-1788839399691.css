@@ -1,0 +1,238 @@
+/* 全局重置與手機樣式 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #2c3e50;
+  padding-bottom: 80px; /* 預留底部選單空間 */
+}
+
+.content {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* 分頁切換控制 */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* 卡片設計 */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.25);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.hero-card h1 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.hero-card .date {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* 兩欄網格 */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.info-card {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.info-card .icon {
+  font-size: 20px;
+  color: #e74c3c;
+}
+
+.info-card strong {
+  display: block;
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.info-card p {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* 行程與清單列表 */
+.schedule-list, .check-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.schedule-list li, .check-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.schedule-list li span {
+  display: inline-block;
+  background: #ffeae6;
+  color: #e74c3c;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+/* 按鈕樣式 */
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #2c3e50;
+  border: 1px solid #cbd5e0;
+}
+
+/* 語言卡片 */
+.subtitle {
+  font-size: 13px;
+  color: #7f8c8d;
+  margin-bottom: 12px;
+}
+
+.lang-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.lang-card:active {
+  transform: scale(0.98);
+}
+
+.jp-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin: 2px 0;
+}
+
+.romaji {
+  font-size: 12px;
+  color: #95a5a6;
+}
+
+.copy-icon {
+  color: #bdc3c7;
+  font-size: 18px;
+}
+
+/* 底部固定導覽列 */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.03);
+  z-index: 1000;
+}
+
+.nav-item {
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #95a5a6;
+  font-size: 11px;
+  width: 33.33%;
+  cursor: pointer;
+}
+
+.nav-item i {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.nav-item.active {
+  color: #e74c3c;
+}
+
+/* Toast 提示浮窗 */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  transition: transform 0.3s ease;
+  z-index: 2000;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}

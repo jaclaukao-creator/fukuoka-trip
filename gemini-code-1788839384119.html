@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>福岡隨身旅遊手冊</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- 引入 FontAwesome 圖示庫 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- 主內容區域 -->
+  <main class="content">
+
+    <!-- 頁面 1: 行程概覽 -->
+    <section id="tab-home" class="tab-content active">
+      <div class="hero-card">
+        <div class="badge">FUKUOKA</div>
+        <h1>福岡自由行隨身手冊</h1>
+        <p class="date"><i class="fa-regular fa-calendar"></i> 2026.11.12 — 11.16 (5天4夜)</p>
+      </div>
+
+      <!-- 快速卡片 -->
+      <div class="card-grid">
+        <div class="info-card">
+          <i class="fa-solid fa-hotel icon"></i>
+          <div>
+            <strong>住宿飯店</strong>
+            <p>博多站前三井花園飯店</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <i class="fa-solid fa-plane icon"></i>
+          <div>
+            <strong>航班資訊</strong>
+            <p>去 CI110 / 回 CI111</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 每日重點行程列表 -->
+      <div class="card">
+        <h3><i class="fa-solid fa-map-location-dot"></i> 每日亮點概覽</h3>
+        <ul class="schedule-list">
+          <li><span>Day 1</span> 博多車站 Check-in ➔ 太宰府天滿宮 ➔ 天神屋台點心</li>
+          <li><span>Day 2</span> 由布院 (湯布院) 一日遊 ➔ 金鱗湖 ➔ 溫泉旅館體驗</li>
+          <li><span>Day 3</span> 門司港懷舊街區 ➔ 唐戶市場鮮魚 ➔ 小倉城</li>
+          <li><span>Day 4</span> 福岡巨蛋 / LaLaport 鋼彈 ➔ 大濠公園 ➔ 中洲屋台拉麵</li>
+          <li><span>Day 5</span> 天神地下街最後採買 ➔ 福岡機場回家</li>
+        </ul>
+      </div>
+
+      <!-- 實用連結按鈕 -->
+      <div class="card">
+        <h3><i class="fa-solid fa-link"></i> 實用地圖與工具</h3>
+        <a href="https://maps.app.goo.gl" target="_blank" class="btn"><i class="fa-solid fa-map"></i> 開啟博多/天神 Google 地圖</a>
+        <a href="https://vvisit-japan-web.digital.go.jp/" target="_blank" class="btn btn-outline"><i class="fa-solid fa-passport"></i> Visit Japan Web 填寫</a>
+      </div>
+    </section>
+
+    <!-- 頁面 2: 保命日語卡片 -->
+    <section id="tab-japanese" class="tab-content">
+      <h2><i class="fa-solid fa-language"></i> 保命日語字卡</h2>
+      <p class="subtitle">點擊下方卡片即可複製日文，直接出示給店員觀看！</p>
+
+      <div class="card lang-card" onclick="copyText('すみません')">
+        <div>
+          <strong>不好意思 / 請問... (萬用開頭)</strong>
+          <p class="jp-text">すみません</p>
+          <p class="romaji">Su-mi-ma-sen</p>
+        </div>
+        <i class="fa-regular fa-copy copy-icon"></i>
+      </div>
+
+      <div class="card lang-card" onclick="copyText('これをください')">
+        <div>
+          <strong>請給我這個 (點餐/購物)</strong>
+          <p class="jp-text">これをください</p>
+          <p class="romaji">Ko-re o ku-da-sa-i</p>
+        </div>
+        <i class="fa-regular fa-copy copy-icon"></i>
+      </div>
+
+      <div class="card lang-card" onclick="copyText('会計をお願いします')">
+        <div>
+          <strong>請幫我結帳</strong>
+          <p class="jp-text">会計をお願いします</p>
+          <p class="romaji">Ka-i-ke-i o o-ne-ga-i-shi-ma-su</p>
+        </div>
+        <i class="fa-regular fa-copy copy-icon"></i>
+      </div>
+
+      <div class="card lang-card" onclick="copyText('免税できますか？')">
+        <div>
+          <strong>請問可以辦理退稅嗎？</strong>
+          <p class="jp-text">免税できますか？</p>
+          <p class="romaji">Men-zei de-ki-ma-su-ka?</p>
+        </div>
+        <i class="fa-regular fa-copy copy-icon"></i>
+      </div>
+    </section>
+
+    <!-- 頁面 3: 福岡必買必吃 -->
+    <section id="tab-shopping" class="tab-content">
+      <h2><i class="fa-solid fa-bag-shopping"></i> 福岡美食與必買清單</h2>
+
+      <div class="card">
+        <h3><i class="fa-solid fa-utensils"></i> 福岡在地必吃美食</h3>
+        <ul class="check-list">
+          <li><strong>博多豚骨拉麵：</strong> 一蘭本社總店、一双拉麵、Shin-Shin</li>
+          <li><strong>博多牛腸鍋 (Motsunabe)：</strong> 前田屋、やま中 (Yamanaka)</li>
+          <li><strong>水瀧鍋 (水炊き)：</strong> 華味鳥 (Hanamidori)</li>
+          <li><strong>屋台小吃 (Yatai)：</strong> 中洲屋台街、天神屋台體驗炒拉麵與串燒</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><i class="fa-solid fa-gift"></i> 人氣伴手禮推薦</h3>
+        <ul class="check-list">
+          <li><strong>明月堂 博多通りもん：</strong> 福岡連續多年銷量冠軍西洋饅頭</li>
+          <li><strong>福太郎 明太子仙貝 (MENBEI)：</strong> 鹹香微辣超涮嘴</li>
+          <li><strong>築紫もち (筑紫餅)：</strong> 黃豆粉黑糖麻糬</li>
+          <li><strong>茅乃舍高湯包：</strong> 博多限定飛魚高湯包</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 底部固定導覽列 -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="switchTab('tab-home', this)">
+      <i class="fa-solid fa-house"></i>
+      <span>概覽</span>
+    </button>
+    <button class="nav-item" onclick="switchTab('tab-japanese', this)">
+      <i class="fa-solid fa-comments"></i>
+      <span>日語</span>
+    </button>
+    <button class="nav-item" onclick="switchTab('tab-shopping', this)">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span>必買必吃</span>
+    </button>
+  </nav>
+
+  <!-- 提示彈窗 (Toast) -->
+  <div id="toast" class="toast">已複製文字！</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
